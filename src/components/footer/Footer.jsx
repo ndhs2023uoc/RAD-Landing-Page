@@ -1,10 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-wrap: wrap;
   color: white;
   background-color: black;
@@ -14,7 +13,7 @@ const Container = styled.div`
   flex-direction: row;
   padding-top: 0%;
 
-  @media only screen and (max-width: 650px){
+  @media only screen and (max-width: 650px) {
     height: 26%;
   }
 `;
@@ -24,8 +23,7 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 20px;
   padding: 0.5%;
-  /* margin-top: 10%; */
-  @media only screen and (max-width: 650px){
+  @media only screen and (max-width: 650px) {
     font-size: 15px;
   }
 `;
@@ -42,16 +40,11 @@ const Descrition = styled.div`
   margin-left: 1%;
   margin-right: 2%;
   padding-top: 0%;
-  @media only screen and (max-width: 650px){
+  @media only screen and (max-width: 650px) {
     font-size: 15px;
     width: 40%;
     display: none;
   }
-  /* @media only screen and (min-width: 600px){
-   flex: 1;
-   padding-left: 5%;
-  } */
-
 `;
 
 const Menu = styled.ul`
@@ -61,7 +54,6 @@ const Menu = styled.ul`
   justify-content: center;
   margin-right: 2%;
   padding-top: 0%;
-
 `;
 
 const MenuItem = styled.li`
@@ -71,11 +63,11 @@ const MenuItem = styled.li`
   margin-right: 30px;
   color: ${(props) => props.theme.colors.textDark};
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: ${(props) => props.theme.colors.text};
   }
   flex-direction: column;
-  @media only screen and (max-width: 650px){
+  @media only screen and (max-width: 650px) {
     font-size: 15px;
   }
 `;
@@ -86,7 +78,7 @@ const MenuItems = styled.div`
   color: #ffffff;
   cursor: pointer;
   margin-top: 5%;
-  @media only screen and (max-width: 650px){
+  @media only screen and (max-width: 650px) {
     font-size: 15px;
   }
 `;
@@ -104,42 +96,38 @@ const CopyRight = styled.div`
 const Footer = () => {
   return (
     <>
-    <Container>
-      <Descrition>
-        <Title>About Us</Title>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi consequuntur soluta suscipit fugit porro possimus, ab, eligendi fuga consequatur dolor quis cumque perferendis repellendus voluptatem, voluptatibus dicta? Eveniet, nam ipsum?
-      </Descrition>
-      {/* <Descrition> */}
-      <MenuItems>
-      <Title>Our Services</Title>
-      <Menu>
+      <Container>
+        <Descrition>
+          <Title>About Us</Title>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+          consequuntur soluta suscipit fugit porro possimus, ab, eligendi fuga
+          consequatur dolor quis cumque perferendis repellendus voluptatem,
+          voluptatibus dicta? Eveniet, nam ipsum?
+        </Descrition>
+        <MenuItems>
+          <Title>Our Services</Title>
+          <Menu>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>About Us</MenuItem>
+            <MenuItem>Services</MenuItem>
+            <MenuItem>Contact Us</MenuItem>
+            <MenuItem>Blog</MenuItem>
+          </Menu>
+        </MenuItems>
 
-        <MenuItem>Home</MenuItem>
-        <MenuItem>About Us</MenuItem>
-        <MenuItem>Services</MenuItem>
-        <MenuItem>Contact Us</MenuItem>
-        <MenuItem>Blog</MenuItem>
-
-      </Menu>
-      </MenuItems>
-      {/* </Descrition> */}
-
-      <MenuItems>
-      <Title>Our Policy</Title>
-      <Menu>
-
-        <MenuItem>Privacy Policy</MenuItem>
-        <MenuItem>Data Policy</MenuItem>
-
-      </Menu>
-      </MenuItems>
-    </Container>
+        <MenuItems>
+          <Title>Our Policy</Title>
+          <Menu>
+            <MenuItem>Privacy Policy</MenuItem>
+            <MenuItem>Data Policy</MenuItem>
+          </Menu>
+        </MenuItems>
+      </Container>
       <CopyRight>
         &copy; 2022 &lt; Code Galaxy/ &gt; - All Rights Reserved.
       </CopyRight>
     </>
-
   );
 };
 
-export default Footer
+export default Footer;

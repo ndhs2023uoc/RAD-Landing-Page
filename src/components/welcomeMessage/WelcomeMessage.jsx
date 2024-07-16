@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components';
-import HeaderImage from '../../images/animation/output-onlinegiftools.gif'
-import { GlobalStyles } from '../theme/Theme';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { GlobalStyles } from "../theme/Theme";
 
 const Header = styled.h1`
   justify-content: center;
   color: ${(props) => props.theme.colors.welcomeheader};
-`;
-
-const Headerimage = styled.img`
-  max-width: 40px;
 `;
 
 const ContainerForMessage = styled.div`
@@ -50,9 +45,8 @@ const Input = styled.input`
 `;
 
 const WelcomeMessage = () => {
-
-  const [welcomeMessage, setWelcomeMessage] = useState('');
-  const [inputValue, setInputValue] = useState('');
+  const [welcomeMessage, setWelcomeMessage] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -60,7 +54,6 @@ const WelcomeMessage = () => {
       setCurrentTime(new Date());
     }, 1000);
 
-    // Clear the interval on component unmount
     return () => {
       clearInterval(intervalId);
     };
@@ -71,50 +64,47 @@ const WelcomeMessage = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       setWelcomeMessage(inputValue);
-      setInputValue('');
+      setInputValue("");
     }
   };
 
   const getGreeting = () => {
     const hours = currentTime.getHours();
     if (hours < 12) {
-      return 'Good Morning';
+      return "Good Morning";
     } else if (hours < 18) {
-      return 'Good Afternoon';
+      return "Good Afternoon";
     } else {
-      return 'Good Evening';
+      return "Good Evening";
     }
   };
 
-
   return (
     <>
-    <GlobalStyles/>
-    <Welcomemessage>
-    <ContainerForMessage >  
-    <Header>Welcome to &lt; Code Galaxy/ &gt;</Header>
-    <Headerimage src={HeaderImage} />
-    </ContainerForMessage>
-    <Text>Current Time: {currentTime.toLocaleTimeString()}</Text>
-    {/* Render input only if welcomeMessage is empty */}
-    {welcomeMessage === '' ? (
-      <Input
-      type="text"
-      placeholder="Please Enter your name"
-      value={inputValue}
-      onChange={handleInputChange}
-      onKeyPress={handleKeyPress}
-    />
-    ) : (
-      <GreetingMessage>
-        {`${getGreeting()}, ${welcomeMessage}!`}
-      </GreetingMessage>
-    )}
-    </Welcomemessage>
+      <GlobalStyles />
+      <Welcomemessage>
+        <ContainerForMessage>
+          <Header>Welcome to &lt; Code Galaxy/ &gt;</Header>
+        </ContainerForMessage>
+        <Text>Current Time: {currentTime.toLocaleTimeString()}</Text>
+        {welcomeMessage === "" ? (
+          <Input
+            type="text"
+            placeholder="Please Enter your name"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
+          />
+        ) : (
+          <GreetingMessage>
+            {`${getGreeting()}, ${welcomeMessage}!`}
+          </GreetingMessage>
+        )}
+      </Welcomemessage>
     </>
-  )
-}
+  );
+};
 
 export default WelcomeMessage;

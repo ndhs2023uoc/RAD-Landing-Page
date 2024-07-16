@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { GlobalStyles } from '../theme/Theme';
-import Footer from '../footer/Footer';
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import { GlobalStyles } from "../theme/Theme";
+import Footer from "../footer/Footer";
 
 const Container = styled.div`
   padding: 25px;
-  /* padding-top: 40px; */
-  /* min-width: 600px; */
   width: 100%;
   max-width: 600px;
   max-height: 600px;
-  /* min-height: 500px; */
   margin: 0 auto;
   border-radius: 50px;
   background-color: #a1d1bf;
-  -webkit-box-shadow: 5px 9px 12px -7px black; 
+  -webkit-box-shadow: 5px 9px 12px -7px black;
   box-shadow: 5px 9px 12px -7px black;
 
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 600px) {
     max-width: 600px;
   }
 `;
@@ -68,7 +64,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size  : 16px;
+  font-size: 16px;
   &:hover {
     background-color: #0056b3;
   }
@@ -85,37 +81,35 @@ const SuccessMessage = styled.p`
   font-size: 20px;
   text-align: center;
   margin-top: 10px;
-
 `;
-
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const validate = () => {
     const errors = {};
-    if (!formData.name) errors.name = 'Name is required';
+    if (!formData.name) errors.name = "Name is required";
     if (!formData.email) {
-      errors.email = 'Email is required';
+      errors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = 'Email address is invalid';
+      errors.email = "Email address is invalid";
     }
-    if (!formData.message) errors.message = 'Message is required';
+    if (!formData.message) errors.message = "Message is required";
     return errors;
   };
 
@@ -123,63 +117,58 @@ const ContactForm = () => {
     e.preventDefault();
     const errors = validate();
     if (Object.keys(errors).length === 0) {
-      setSuccessMessage('Your message has been sent successfully!');
+      setSuccessMessage("Your message has been sent successfully!");
       setFormData({
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: "",
       });
       setErrors({});
     } else {
       setErrors(errors);
-      setSuccessMessage('');
+      setSuccessMessage("");
     }
   };
 
   return (
-    
     <>
-    <GlobalStyles/>
-    <Container>
-      <Title>Contact Us</Title>
-      <Form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-        
-        <Input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-        
-        <Textarea
-          name="message"
-          placeholder="Your Message"
-          rows="5"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
-        
-        <Button type="submit">Send Message</Button>
-      </Form>
-      {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
-      
+      <GlobalStyles />
+      <Container>
+        <Title>Contact Us</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
 
-    </Container>
+          <Input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+
+          <Textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+          />
+          {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
+
+          <Button type="submit">Send Message</Button>
+        </Form>
+        {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
+      </Container>
     </>
   );
 };
-
-
 
 export default ContactForm;

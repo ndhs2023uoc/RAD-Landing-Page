@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -21,17 +21,13 @@ const Subtitle = styled.div`
   color: tomato;
 `;
 
-const TextBanner = ({title, subtitle}) => {
+const TextBanner = ({ title, subtitle }) => {
   return (
     <Container>
-      <Title>
-        {title}
-      </Title>
-      <Subtitle>
-        {subtitle}
-      </Subtitle>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
     </Container>
-  )
-}
+  );
+};
 
-export default TextBanner
+export default TextBanner;

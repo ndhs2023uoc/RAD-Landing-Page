@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import avatarImage1 from '../../images/teamMembers/111.jpg'
-import avatarImage2 from '../../images/teamMembers/112.jpg'
-import avatarImage3 from '../../images/teamMembers/113.jpg'
-import avatarImage4 from '../../images/teamMembers/114.jpg'
-import TextBanner from '../textbanner/TextBanner'
+import React from "react";
+import styled from "styled-components";
+import avatarImage1 from "../../images/teamMembers/111.jpg";
+import avatarImage2 from "../../images/teamMembers/112.jpg";
+import avatarImage3 from "../../images/teamMembers/113.jpg";
+import avatarImage4 from "../../images/teamMembers/114.jpg";
+import TextBanner from "../textbanner/TextBanner";
 
 const Container = styled.div`
   padding: 5%;
@@ -26,7 +26,7 @@ const TeamCard = styled.div`
   align-items: flex-start;
   justify-content: center;
   align-items: center;
-  -webkit-box-shadow: 6px 5px 14px 2px rgba(208, 86, 165, 0.86); 
+  -webkit-box-shadow: 6px 5px 14px 2px rgba(208, 86, 165, 0.86);
   box-shadow: 6px 5px 14px 2px rgba(81, 236, 212, 0.523);
 `;
 
@@ -34,7 +34,7 @@ const CardImage = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-  &:hover{
+  &:hover {
     cursor: pointer;
     opacity: 0.5;
   }
@@ -59,42 +59,42 @@ const TeamPosition = styled.div`
 const Teams = () => {
   return (
     <Container>
-      <TextBanner title={'We are union'} subtitle={'Our Team'} />
+      <TextBanner title={"We are union"} subtitle={"Our Team"} />
       <Wrapper>
         <TeamCard>
-          <CardImage src={avatarImage1}/>
+          <CardImage src={avatarImage1} />
           <TextWrapper>
             <MemberName>Michael Smith</MemberName>
-              <TeamPosition>Software Engineer</TeamPosition>
+            <TeamPosition>Software Engineer</TeamPosition>
           </TextWrapper>
         </TeamCard>
 
         <TeamCard>
-          <CardImage src={avatarImage2}/>
+          <CardImage src={avatarImage2} />
           <TextWrapper>
             <MemberName>Emily Johnson</MemberName>
-              <TeamPosition>Product Manager</TeamPosition>
+            <TeamPosition>Product Manager</TeamPosition>
           </TextWrapper>
         </TeamCard>
 
         <TeamCard>
-          <CardImage src={avatarImage3}/>
+          <CardImage src={avatarImage3} />
           <TextWrapper>
             <MemberName>David Wilson</MemberName>
-              <TeamPosition>Data Scientist</TeamPosition>
+            <TeamPosition>Data Scientist</TeamPosition>
           </TextWrapper>
         </TeamCard>
 
         <TeamCard>
-          <CardImage src={avatarImage4}/>
+          <CardImage src={avatarImage4} />
           <TextWrapper>
             <MemberName>James Davis</MemberName>
-              <TeamPosition>Business Analyst</TeamPosition>
+            <TeamPosition>Business Analyst</TeamPosition>
           </TextWrapper>
         </TeamCard>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Teams
+export default Teams;

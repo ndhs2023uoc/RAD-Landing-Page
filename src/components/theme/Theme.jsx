@@ -1,6 +1,6 @@
-import {ThemeProvider} from 'styled-components';
-import {createGlobalStyle} from 'styled-components';
-import styled from 'styled-components'
+import { ThemeProvider } from "styled-components";
+import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 *{
@@ -23,50 +23,48 @@ export const Container = styled.div`
 `;
 
 export const theme = {
-  colors:{
-    primary: 'darkBlue',
-    secondary: 'tomato',
-    light: "black" ,
+  colors: {
+    primary: "darkBlue",
+    secondary: "tomato",
+    light: "black",
     light2: "black",
     text: "snow",
-    textDark: "gray" ,
+    textDark: "gray",
     sectionOneColor: "#c1d7f4",
     sectionThreeColor: "#abedcc",
     sectionOneText: "#02227a",
     bgDefault: "white",
-    bgPrimary: "darkBlue" ,
+    bgPrimary: "darkBlue",
     bgSecondary: "darkBlué",
-    bgLight: "aliceBlue" ,
-    infoBoxTransform: "aliceBlue" ,
+    bgLight: "aliceBlue",
+    infoBoxTransform: "aliceBlue",
     welcomeheader: "#95a8e3",
     welcomemessage: "#244bbe",
     welcometime: "darkBlue",
-    shadow: "black"
-
+    shadow: "black",
   },
 };
 
 export const Darktheme = {
-  colors:{
-    primary: 'white',
-    secondary: 'tomato',
-    light: "#519fe3" ,
+  colors: {
+    primary: "white",
+    secondary: "tomato",
+    light: "#519fe3",
     light2: "#aef1ea",
     text: "snow",
-    textDark: "gray" ,
+    textDark: "gray",
     sectionOneColor: "#0c263c",
     // sectionOneColor: "#aef1ea",
     sectionThreeColor: "#022a2a",
     sectionOneText: "snow",
     bgDefault: "#030417",
-    bgPrimary: "black" ,
+    bgPrimary: "black",
     bgSecondary: "black",
-    bgLight: "aliceBlue" ,
-    infoBoxTransform: "#0d0a3e" ,
+    bgLight: "aliceBlue",
+    infoBoxTransform: "#0d0a3e",
     welcomeheader: "#95a8e3",
     welcomemessage: "#95a8e3",
     welcometime: "#95a8e3",
-    shadow: "white"
-
+    shadow: "white0",
   },
 };
